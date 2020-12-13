@@ -18,17 +18,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/a_page")
-    public String toA(){
-        System.out.println("Controller工作了.....");
-        return "user/a";
-    }
-    @RequestMapping(value = "/getUsers")
-    public String getUsers(){
-        List<User> users = userService.selectAll();
-        for(User user:users){
-            System.out.println(user);
-        }
-        return "user/a";
-    }
+//    @RequestMapping("/a_page")
+//    public String toA(){
+//        System.out.println("Controller工作了.....");
+//        return "user/a";
+//    }
+//    @RequestMapping(value = "/getUsers")
+//    public String getUsers(){
+//        List<User> users = userService.selectAll();
+//        for(User user:users){
+//            System.out.println(user);
+//        }
+//        return "user/a";
+//    }
 }
