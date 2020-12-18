@@ -37,11 +37,15 @@
 </div>
 <div class="left">
     <ul>
-        <li>用户管理</li>
+        <h4>用户管理</h4>
         <ul>
-            <li>
-                <a href="${appContext}/admin/userList">用户列表</a></li>
-            <li>添加新用户</li>
+            <li><a href="${appContext}/admin/userList">用户列表</a></li>
+            <li><a href="${appContext}/user/addForm">添加新用户</a></li>
+        </ul>
+        <h4>商品管理</h4>
+        <ul>
+            <li>商品列表</li>
+            <li>商品修改</li>
         </ul>
     </ul>
 </div>

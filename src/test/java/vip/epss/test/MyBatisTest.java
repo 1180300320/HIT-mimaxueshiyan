@@ -26,7 +26,7 @@ public class MyBatisTest {
         //4. 获取对应的mapper
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         //5.调用接口中定义的方法
-        Integer num = userMapper.insert(new User(null, "lxs", "300"));
+        Integer num = userMapper.insert(new User(null, "lxs", "300","user"));
         System.out.println("插入了" + num + "条数据");
 //        sqlSession.commit();//手动提交
         //6. 关闭资源

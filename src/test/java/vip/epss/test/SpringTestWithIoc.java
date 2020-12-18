@@ -43,7 +43,7 @@ public class SpringTestWithIoc {
 
     @Test
     public void test01(){
-        userService.insert(new User(null,"lisi5","111"));
+        userService.insert(new User(null,"lisi5","111","shopper"));
         System.out.println("insert 执行了");
 //        System.out.println(0/0);
         userService.delete(16);

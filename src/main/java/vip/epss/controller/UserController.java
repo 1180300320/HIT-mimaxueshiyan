@@ -37,16 +37,30 @@ public class UserController {
 
         return "user/login";
     }
-    @RequestMapping(value = "/list")
-    public ModelAndView list(){
-        ModelAndView modelAndView = new ModelAndView("admin/userList");
-        List<User> users = userService.selectAll();
-        modelAndView.addObject("users",users);
-        return modelAndView;
-    }
+//    @RequestMapping(value = "/list")
+//    public ModelAndView list(){
+//        ModelAndView modelAndView = new ModelAndView("admin/userList");
+//        List<User> users = userService.selectAll();
+//        modelAndView.addObject("users",users);
+//        return modelAndView;
+//    }
+
     @RequestMapping(value = "/admin")
     public String admin(){
 
         return "admin/admin";
+    }
+
+    @RequestMapping(value = "/addForm")
+    public String addForm(){
+        return "user/addForm";
+    }
+//不会正确跳转到带内容的user list++++++++++++++++++++++++++++++++++++++++++++++++++
+    @RequestMapping(value = "/add")
+    public ModelAndView add(User user){
+        ModelAndView modelAndView = new ModelAndView("admin/userList");
+        System.out.println(user);
+        userService.insert(user);
+        return modelAndView;
     }
 }

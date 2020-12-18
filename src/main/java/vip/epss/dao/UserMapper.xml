@@ -21,7 +21,7 @@
     </select>
 <!--    插入操作-->
     <insert id="insert" parameterType="User">
-        insert into user (username, password) values (#{username},#{password})
+        insert into user (username, password,usertype) values (#{username},#{password},#{usertype})
     </insert>
 <!--    删除操作-->
     <delete id="delete">
@@ -29,6 +29,6 @@
     </delete>
 <!--    修改操作-->
     <update id="update" parameterType="User">
-        update user set username=#{username},password=#{password} where uid=#{uid}
+        update user set username=#{username},password=#{password},usertype=#{usertype} where uid=#{uid}
     </update>
 </mapper>

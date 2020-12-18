@@ -20,11 +20,13 @@ public class User implements Serializable {
     private Integer uid;
     private String username;
     private String password;
+    private String usertype;
 
-    public User(Integer uid, String username, String password) {
+    public User(Integer uid, String username, String password, String usertype) {
         this.uid = uid;
         this.username = username;
         this.password = password;
+        this.usertype = usertype;
     }
 
     public User() {
@@ -36,6 +38,7 @@ public class User implements Serializable {
                 "uid=" + uid +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", usertype='" + usertype + '\'' +
                 '}';
     }
 
@@ -61,5 +64,11 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsertype() { return usertype; }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 }

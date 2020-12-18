@@ -32,10 +32,7 @@ public class UserServiceImpl  implements UserService {
     }
 
     @Override
-    public List<User> selectAll() {
-        System.out.println("Service 层的selectAll()方法执行了.......");
-        return userMapper.selectAll();
-    }
+    public List<User> selectAll() { return userMapper.selectAll(); }
 
     @Override
     public User selectByUid(Integer uid) {
