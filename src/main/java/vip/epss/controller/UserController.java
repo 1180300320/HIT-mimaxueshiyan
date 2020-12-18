@@ -3,6 +3,7 @@ package vip.epss.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import vip.epss.domain.User;
 import vip.epss.service.UserService;
 
@@ -31,4 +32,21 @@ public class UserController {
 //        }
 //        return "user/a";
 //    }
+    @RequestMapping(value = "/login")
+    public String login(){
+
+        return "user/login";
+    }
+    @RequestMapping(value = "/list")
+    public ModelAndView list(){
+        ModelAndView modelAndView = new ModelAndView("admin/userList");
+        List<User> users = userService.selectAll();
+        modelAndView.addObject("users",users);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/admin")
+    public String admin(){
+
+        return "admin/admin";
+    }
 }
