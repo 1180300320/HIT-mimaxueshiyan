@@ -8,29 +8,60 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>用户登录页面</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加一个新用户</title>
+    <link rel="stylesheet" href="${appContext}/css/bootstrap.css" />
 </head>
-<body >
-<h2 align="center"><font color=red>用户登录页面</font></h2>
-<%--<form action="success.jsp" method="post">--%>
-<form method="post" action="${appContext}/user/add">
-    <table align="center" border="1">
-        <tr>
-            <td>用户名:</td>
-            <td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>密&nbsp;&nbsp;码:</td>
-            <td><input type="text" name="password"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="登录" name="login"></td>
-            <td><input type="reset" value="重置" name="reset"></td>
-        </tr>
-    </table>
-    <p align="center"><a href="registered.jsp" color=blue>注册用户</a></p>
-</form>
+<body>
+<div class="container">
+    <form method="post" action="${appContext}/user/add" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="usernameInput" class="col-sm-2 control-label">名字</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="usernameInput" name="username" placeholder="请输入名字">
+            </div>
+            <div id="usernameTips" class="help-block col-sm-2"></div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="password" name="password" placeholder="请输入密码">
+            </div>
+            <div class="help-block col-sm-2"></div>
+        </div>
 
+        <div class="radio">
+            <label>
+                <input type="radio" name="usertype" id="optionsRadios1" value="user" checked> 用户
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="usertype" id="optionsRadios2" value="shopper" checked> 商家
+            </label>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-block btn-success">登录</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="reset" class="btn btn-block btn-primary">重置</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-block btn-primary" href="${appContext}/user/register">注册新用户</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="${appContext}/js/jquery-3.3.1.js"></script>
+<script src="${appContext}/js/bootstrap.js"></script>
 </body>
 </html>

@@ -32,23 +32,29 @@ public class UserController {
 //        }
 //        return "user/a";
 //    }
+
     @RequestMapping(value = "/login")
     public String login(){
 
         return "user/login";
     }
-//    @RequestMapping(value = "/list")
-//    public ModelAndView list(){
-//        ModelAndView modelAndView = new ModelAndView("admin/userList");
-//        List<User> users = userService.selectAll();
-//        modelAndView.addObject("users",users);
-//        return modelAndView;
-//    }
+
+    @RequestMapping(value = "/register")
+    public String register(){
+
+        return "user/register";
+    }
 
     @RequestMapping(value = "/admin")
     public String admin(){
 
         return "admin/admin";
+    }
+
+    @RequestMapping(value = "/shop")
+    public String shop(){
+
+        return "sahgncheng/shangcheng";
     }
 
     @RequestMapping(value = "/addForm")

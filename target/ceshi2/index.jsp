@@ -8,11 +8,13 @@
 
 <html>
 <body>
-<h2>Hello World!</h2>
-<a href="WEB-INF/welcome.jsp">welcome </a>
-fhf
-<a href="user/login">用户注册登录</a>
-pppp
+<h2>欢迎使用电子商城!请先登录</h2>
+<a href="user/shop">电子商城系统</a>
+<br>
+<a href="user/register">用户注册</a>
+<br>
+<a href="user/login">用户登录</a>
+<br>
 <a href="user/admin">跳转至后台管理</a>
 </body>
 </html>
