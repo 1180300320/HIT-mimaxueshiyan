@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="${appContext}/user/add" class="form-horizontal" role="form">
+    <form method="post" action="${appContext}/user/logincompare" class="form-horizontal" role="form">
         <div class="form-group">
             <label for="usernameInput" class="col-sm-2 control-label">名字</label>
             <div class="col-sm-8">
@@ -31,16 +31,6 @@
             <div class="help-block col-sm-2"></div>
         </div>
 
-        <div class="radio">
-            <label>
-                <input type="radio" name="usertype" id="optionsRadios1" value="user" checked> 用户
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="usertype" id="optionsRadios2" value="shopper" checked> 商家
-            </label>
-        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

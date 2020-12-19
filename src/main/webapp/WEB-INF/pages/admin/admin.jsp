@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="top">
-    电子商城后台管理系统    欢迎您:xxx       退出登录
+    电子商城后台管理系统    欢迎您:xxx       <li><a target="_self" href="${appContext}/user/logout">退出登录</a></li>
 </div>
 <div class="left">
     <ul>

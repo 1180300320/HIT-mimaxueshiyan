@@ -9,12 +9,12 @@
 <html>
 <body>
 <h2>欢迎使用电子商城!请先登录</h2>
-<a href="user/shop">电子商城系统</a>
+<a href="${appContext}/user/shop">电子商城系统</a>
 <br>
-<a href="user/register">用户注册</a>
+<a href="${appContext}/user/register">用户注册</a>
 <br>
-<a href="user/login">用户登录</a>
+<a href="${appContext}/user/login">用户登录</a>
 <br>
-<a href="user/admin">跳转至后台管理</a>
+<a href="${appContext}/user/admin">跳转至后台管理</a>
 </body>
 </html>

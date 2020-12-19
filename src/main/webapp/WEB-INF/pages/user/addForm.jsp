@@ -49,15 +49,7 @@
             </div>
         </form>
     </div>
-    <form method="post" action="${appContext}/user/add" >
-        <input type="text" name="username" placeholder="请输入用户名" />
-        <input type="text" name="password" placeholder="请输入密码" /><br>
 
-        <input type="radio" name="usertype" value="user">用户
-        <input type="radio" name="usertype" value="shopper">商家<br>
-
-        <input type="submit" value="添加" />
-    </form>
 <script src="${appContext}/js/jquery-3.3.1.js"></script>
 <script src="${appContext}/js/bootstrap.js"></script>
 </body>

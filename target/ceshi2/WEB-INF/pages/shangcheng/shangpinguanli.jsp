@@ -11,6 +11,6 @@
     <title>商品管理界面</title>
 </head>
 <body>
-
+商品管理界面
 </body>
 </html>

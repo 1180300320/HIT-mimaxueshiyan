@@ -19,6 +19,9 @@
     <select id="selectByUid" resultType="User">
         select * from user where uid=#{uid}
     </select>
+    <select id="selectByUsername" resultType="User">
+        select * from user where username=#{username}
+    </select>
 <!--    插入操作-->
     <insert id="insert" parameterType="User">
         insert into user (username, password,usertype) values (#{username},#{password},#{usertype})
