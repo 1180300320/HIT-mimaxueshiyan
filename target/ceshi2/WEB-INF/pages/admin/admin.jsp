@@ -17,16 +17,16 @@
         .top{
             width: 100%;
             height: 60px;
-            background-color: #7c7ce3;
+            background-color: #8341b6;
         }
         .left{
             width: 30%;
-            background-color: #ac753a;
+            background-color: #bd8139;
             float: left;
         }
         .main{
             width: 70%;
-            background-color: #e3d594;
+            background-color: #ffffff;
             float: left;
         }
     </style>

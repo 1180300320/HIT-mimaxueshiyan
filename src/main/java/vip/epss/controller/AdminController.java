@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import vip.epss.domain.Goods;
 import vip.epss.domain.User;
+import vip.epss.service.GoodsService;
 import vip.epss.service.UserService;
 
 import java.util.List;
@@ -16,12 +18,34 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
+    private GoodsService goodsService;
 
     @RequestMapping(value = "/userList")
     public ModelAndView userList(){
         ModelAndView modelAndView = new ModelAndView("admin/userList");
         List<User> users = userService.selectAll();
         modelAndView.addObject("users",users);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/goodsList")
+    public ModelAndView goodsList(){
+        ModelAndView modelAndView = new ModelAndView("admin/goodsList");
+        List<Goods> goods = goodsService.selectAll();
+        modelAndView.addObject("goods",goods);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/addnum")
+    public ModelAndView add(@RequestParam Integer itemid,Integer num){
+        Goods getgood = goodsService.selectByItemid(itemid);
+        goodsService.addgoods(getgood,num);
+        ModelAndView modelAndView = new ModelAndView("redirect:userList");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/minusnum")
+    public ModelAndView minus(@RequestParam Integer itemid,Integer num){
+        Goods getgood = goodsService.selectByItemid(itemid);
+        goodsService.minus(getgood,num);
+        ModelAndView modelAndView = new ModelAndView("redirect:userList");
         return modelAndView;
     }
     @RequestMapping(value = "/delete")

@@ -71,14 +71,14 @@ public class UserController {
 //不会正确跳转到带内容的user list++++++++++++++++++++++++++++++++++++++++++++++++++
     @RequestMapping(value = "/add")
     public ModelAndView add(User user){
-        ModelAndView modelAndView = new ModelAndView("admin/userList");
+        ModelAndView modelAndView = new ModelAndView("redirect:/admin/userList");
         System.out.println(user);
         userService.insert(user);
         return modelAndView;
     }
     @RequestMapping(value = "/logincompare")
     public ModelAndView compare(User user){
-        ModelAndView modelAndView = new ModelAndView("");
+        ModelAndView modelAndView = new ModelAndView();
 //        System.out.println(user);
         User getuser = userService.selectByUsername(user.getUsername());
         System.out.println(getuser);

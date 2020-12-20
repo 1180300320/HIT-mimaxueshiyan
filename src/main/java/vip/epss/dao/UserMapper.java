@@ -20,6 +20,6 @@ public interface UserMapper {
     public List<User> selectAll();
     //查询一条记录,根据主键查询
     public User selectByUid(Integer uid);
-    //查询一条记录,根据主键查询
+    //查询一条记录,根据用户名查询
     public User selectByUsername(String username);
 }
