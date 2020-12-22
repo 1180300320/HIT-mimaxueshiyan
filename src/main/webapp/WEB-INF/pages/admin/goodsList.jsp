@@ -38,9 +38,9 @@
             <td>${goods.itemname}</td>
             <td>${goods.owner}</td>
             <td>${goods.number}</td>
-            <td><a class="btn btn-danger btn-lg" href="${appContext}/admin/addnum?itemid=${goods.itemid} num=1">-</a></td>
-            <td>+</td>
-            <td ><a class="btn btn-danger btn-sm" href="${appContext}/admin/delete?itemid=${goods.itemid}">删除</a></td>
+            <td><a class="btn btn-danger btn-lg" href="${appContext}/admin/addnum?itemid=${goods.itemid}&num=1">-</a></td>
+            <td><a class="btn btn-danger btn-lg" href="${appContext}/admin/minusnum?itemid=${goods.itemid}&num=1">+</a></td>
+            <td ><a class="btn btn-danger btn-sm" href="${appContext}/admin/deleteItem?itemid=${goods.itemid}">删除</a></td>
         </tr>
     </c:forEach>
 

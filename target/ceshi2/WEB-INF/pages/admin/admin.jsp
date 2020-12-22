@@ -44,7 +44,7 @@
         </ul>
         <h4>商品管理</h4>
         <ul>
-            <li>商品列表</li>
+            <li><a href="${appContext}/admin/goodsList">商品列表</a></li>
             <li>商品修改</li>
         </ul>
     </ul>

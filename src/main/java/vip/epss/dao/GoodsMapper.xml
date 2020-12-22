@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="vip.epss.dao.UserMapper">
+<mapper namespace="vip.epss.dao.GoodsMapper">
     <!--    查询操作 -->
     <select id="selectAll" resultType="Goods">
         select * from goods
@@ -20,11 +20,11 @@
     </insert>
     <!--    删除操作-->
     <delete id="delete">
-        delete from user where itemid=#{itemid}
+        delete from goods where itemid=#{itemid}
     </delete>
     <!--    修改操作-->
     <update id="update" parameterType="Goods">
-        update user set itemname=#{itemname},owner=#{owner},number=#{number} where uid=#{uid}
+        update goods set itemname=#{itemname},owner=#{owner},number=#{number} where itemid=#{itemid}
     </update>
 <!--    <update id="minus" parameterType="Goods">-->
 <!--        update user set username=#{username},password=#{password},usertype=#{usertype} where uid=#{uid}-->

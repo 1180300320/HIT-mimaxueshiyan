@@ -18,6 +18,7 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
+    @Autowired
     private GoodsService goodsService;
 
     @RequestMapping(value = "/userList")
@@ -35,23 +36,29 @@ public class AdminController {
         return modelAndView;
     }
     @RequestMapping(value = "/addnum")
-    public ModelAndView add(@RequestParam Integer itemid,Integer num){
+    public ModelAndView addnum(@RequestParam Integer itemid,@RequestParam Integer num){
         Goods getgood = goodsService.selectByItemid(itemid);
         goodsService.addgoods(getgood,num);
-        ModelAndView modelAndView = new ModelAndView("redirect:userList");
+        ModelAndView modelAndView = new ModelAndView("redirect:goodsList");
         return modelAndView;
     }
     @RequestMapping(value = "/minusnum")
-    public ModelAndView minus(@RequestParam Integer itemid,Integer num){
+    public ModelAndView minusnum(@RequestParam Integer itemid,@RequestParam Integer num){
         Goods getgood = goodsService.selectByItemid(itemid);
         goodsService.minus(getgood,num);
-        ModelAndView modelAndView = new ModelAndView("redirect:userList");
+        ModelAndView modelAndView = new ModelAndView("redirect:goodsList");
         return modelAndView;
     }
     @RequestMapping(value = "/delete")
     public ModelAndView delete(@RequestParam Integer uid){
         userService.delete(uid);
         ModelAndView modelAndView = new ModelAndView("redirect:userList");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/deleteItem")
+    public ModelAndView deleteItem(@RequestParam Integer itemid){
+        goodsService.delete(itemid);
+        ModelAndView modelAndView = new ModelAndView("redirect:goodsList");
         return modelAndView;
     }
 
