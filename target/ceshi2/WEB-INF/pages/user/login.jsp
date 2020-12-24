@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%--获取应用名以方便接下来地址跳转--%>
+<%
+    String appPath = request.getContextPath();
+    request.getSession().setAttribute("appContext",appPath);
+%>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -50,6 +55,11 @@
         </div>
     </form>
 </div>
+<%--<script>--%>
+<%--    if(${requestScope.msg}!= null)--%>
+<%--        alert(${requestScope.msg})--%>
+<%--</script>--%>
+${requestScope.msg}
 
 <script src="${appContext}/js/jquery-3.3.1.js"></script>
 <script src="${appContext}/js/bootstrap.js"></script>

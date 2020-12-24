@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%--获取应用名以方便接下来地址跳转--%>
+<%
+    String appPath = request.getContextPath();
+    request.getSession().setAttribute("appContext",appPath);
+%>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -45,6 +50,12 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-block btn-primary">注册</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-block btn-primary" href="${appContext}/user/login">跳转至登录界面</a>
             </div>
         </div>
     </form>

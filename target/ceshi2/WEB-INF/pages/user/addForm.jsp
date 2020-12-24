@@ -52,5 +52,41 @@
 
 <script src="${appContext}/js/jquery-3.3.1.js"></script>
 <script src="${appContext}/js/bootstrap.js"></script>
+
+<script>
+    $(document).ready(function(){});
+    $(function () {
+        var flag=false;
+
+        //当在用户名输入框中触发键盘时做用户是否重名的验证
+        $("#usernameInput").keyup(function () {
+            $.get(
+                "${appContext}/user/userExistAjax?username="+encodeURI($("#usernameInput").val()),
+                function(result){
+                    if(result=="该用户已存在") {
+                        $("#usernameTips").text(result);
+                        $("#usernameTips").addClass("danger");
+                        // $("#usernameTips").parent().addClass("has-error");
+                        $("button").addClass("disabled");
+                        // flag=false;
+                    }else if(result=="格式不正确或包含非法字符"){
+                        $("#usernameTips").text(result);
+                        // $("#usernameTips").parent().addClass("has-error");
+                        $("button").addClass("disabled");
+                        // flag=false;
+                    }else{
+                        $("#usernameTips").text(result);
+                        // $("#usernameTips").parent().addClass("has-success");
+                        $("button").removeClass("disabled");
+                        flag=true;
+                    }
+                }
+            );
+        });
+
+        //判断表单能否提交
+        $("form").submit(function(){return flag;});
+    });
+</script>
 </body>
 </html>

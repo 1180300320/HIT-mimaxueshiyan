@@ -22,4 +22,6 @@ public interface UserMapper {
     public User selectByUid(Integer uid);
     //查询一条记录,根据用户名查询
     public User selectByUsername(String username);
+    //查询一条记录,根据用户名和密码查询,用于登录检查
+    public User selectByUser(User user);
 }
