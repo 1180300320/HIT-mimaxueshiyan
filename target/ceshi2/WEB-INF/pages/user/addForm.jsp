@@ -69,7 +69,7 @@
                         // $("#usernameTips").parent().addClass("has-error");
                         $("button").addClass("disabled");
                         // flag=false;
-                    }else if(result=="格式不正确或包含非法字符"){
+                    }else if(result=="用户名或密码长度不符合规范！"){
                         $("#usernameTips").text(result);
                         // $("#usernameTips").parent().addClass("has-error");
                         $("button").addClass("disabled");

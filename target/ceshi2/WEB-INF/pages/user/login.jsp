@@ -55,13 +55,28 @@
         </div>
     </form>
 </div>
-<%--<script>--%>
-<%--    if(${requestScope.msg}!= null)--%>
-<%--        alert(${requestScope.msg})--%>
-<%--</script>--%>
+
+
+
 ${requestScope.msg}
+
+
+
+
+<script>
+    display_alert()
+    function display_alert()
+    {
+        if($.isEmptyObject(${requestScope.msg}))
+            alert(${requestScope.msg});
+    }
+</script>
+
+<%--alert("你好！");--%>
 
 <script src="${appContext}/js/jquery-3.3.1.js"></script>
 <script src="${appContext}/js/bootstrap.js"></script>
+
+
 </body>
 </html>

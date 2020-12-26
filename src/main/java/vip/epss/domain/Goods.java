@@ -5,12 +5,14 @@ import java.io.Serializable;
 public class Goods implements Serializable {
     private Integer itemid;
     private String itemname;
+    private float itemprice;
     private String owner;
     private long number;
 
-    public Goods(Integer itemid, String itemname, String owner, long number) {
+    public Goods(Integer itemid, String itemname, float itemprice, String owner, long number) {
         this.itemid = itemid;
         this.itemname = itemname;
+        this.itemprice = itemprice;
         this.owner = owner;
         this.number = number;
     }
@@ -23,6 +25,7 @@ public class Goods implements Serializable {
         return "User{" +
                 "itemid=" + itemid +
                 ", itemname='" + itemname + '\'' +
+                ", itemprice='" + itemprice + '\'' +
                 ", owner='" + owner + '\'' +
                 ", number='" + number + '\'' +
                 '}';
@@ -57,4 +60,8 @@ public class Goods implements Serializable {
     public void setNumber(long number) {
         this.number = number;
     }
+
+    public float getItemprice() { return itemprice; }
+
+    public void setItemprice(float itemprice) { this.itemprice = itemprice; }
 }

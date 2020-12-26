@@ -24,7 +24,7 @@
     </delete>
     <!--    修改操作-->
     <update id="update" parameterType="Goods">
-        update goods set itemname=#{itemname},owner=#{owner},number=#{number} where itemid=#{itemid}
+        update goods set itemname=#{itemname},itemprice=#{itemprice},owner=#{owner},number=#{number} where itemid=#{itemid}
     </update>
 <!--    <update id="minus" parameterType="Goods">-->
 <!--        update user set username=#{username},password=#{password},usertype=#{usertype} where uid=#{uid}-->

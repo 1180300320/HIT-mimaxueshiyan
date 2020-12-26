@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="vip.epss.dao.GouwucheMapper">
+    <!--    查询操作 -->
+    <select id="selectAll" resultType="Gouwuche">
+        select * from gouwuche
+    </select>
+    <select id="selectByGouwucheid" resultType="Gouwuche">
+        select * from gouwuche where gouwucheid=#{gouwucheid}
+    </select>
+    <select id="selectByUid" resultType="Gouwuche">
+        select * from gouwuche where uid=#{uid}
+    </select>
+    <!--    插入操作-->
+    <insert id="insert" parameterType="Gouwuche">
+        insert into gouwuche (uid, itemid, itemnum) values (#{uid},#{itemid},#{itemnum})
+    </insert>
+    <!--    删除操作-->
+    <delete id="delete">
+        delete from gouwuche where gouwucheid=#{gouwucheid}
+    </delete>
+    <!--    修改操作-->
+    <update id="update" parameterType="Gouwuche">
+        update gouwuche set uid=#{uid},itemid=#{itemid},itemnum=#{itemnum} where gouwucheid=#{gouwucheid}
+    </update>
+</mapper>

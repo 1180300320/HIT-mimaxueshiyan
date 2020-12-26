@@ -22,6 +22,7 @@
         <th>序号#</th>
         <th>商品id(itemid)</th>
         <th>商品名(itemname)</th>
+        <th>商品单价(itemprice)</th>
         <th>所属商家(owner)</th>
         <th>商品数(number)</th>
         <th>操作(减少数量)</th>
@@ -32,11 +33,11 @@
     <tbody>
     <%--    循环遍历输出数据,使用jstl--%>
     <c:forEach items="${goods}" var="goods" varStatus="status">
-        if()
         <tr>
             <th>${status.count}</th>
             <td>${goods.itemid}</td>
             <td>${goods.itemname}</td>
+            <td>${goods.itemprice}</td>
             <td>${goods.owner}</td>
             <td>${goods.number}</td>
             <td><a class="btn btn-danger btn-lg" href="${appContext}/admin/minusnum?itemid=${goods.itemid}&num=1">-</a></td>

@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<div>
+<div class=".text-center">
     <h2>欢迎使用电子商城!请先登录</h2>
     <%--<a href="${appContext}/user/shop">电子商城系统</a>--%>
     <%--<br>--%>
