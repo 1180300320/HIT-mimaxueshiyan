@@ -42,37 +42,44 @@ public class UserController {
 //        return "user/a";
 //    }
 
+//    欢迎页面跳转登录按钮
     @RequestMapping(value = "/login")
     public String login(){
         return "user/login";
     }
 
+//    欢迎页面跳转注册按钮
     @RequestMapping(value = "/register")
     public String register(){
         return "user/register";
     }
 
+//    欢迎页面跳转至管理员界面按钮（已删除）
     @RequestMapping(value = "/admin")
     public String admin(){
         return "admin/admin";
     }
 
+//    欢迎页面跳转至商城界面按钮（已删除）
     @RequestMapping(value = "/shop")
     public String shop(){
         return "shangcheng/shangcheng";
     }
 
+//    管理员界面登出按钮
     @RequestMapping(value = "/logout")
     public String logout(HttpSession session){
         session.invalidate();
         return "redirect:/index.jsp";
     }
 
+//    管理员界面用户管理界面添加用户按钮
     @RequestMapping(value = "/addForm")
     public String addForm(){
         return "user/addForm";
     }
 
+//    管理员界面用户管理界面添加用户方法
     @RequestMapping(value = "/add")
     public ModelAndView add(User user){
         ModelAndView modelAndView = new ModelAndView("redirect:/admin/userList");
@@ -80,6 +87,8 @@ public class UserController {
         userService.insert(user);
         return modelAndView;
     }
+
+//    注册界面注册方法
     @RequestMapping(value = "/registeradd")
     public ModelAndView registeradd(User user){
         ModelAndView modelAndView = new ModelAndView("redirect:/user/login");
@@ -87,6 +96,8 @@ public class UserController {
         userService.insert(user);
         return modelAndView;
     }
+
+//    登录方法
     @RequestMapping(value = "/logincompare")
     public ModelAndView compare(User user, HttpSession session){
         ModelAndView modelAndView = new ModelAndView();
@@ -103,6 +114,7 @@ public class UserController {
             else if (getuser.getUsertype().equals("shopper"))
             {
                 System.out.println("是shopper");
+                modelAndView.addObject(getuser.getUsername());
                 modelAndView.setViewName("redirect:/goods/shangpinguanli");
             }
             else
@@ -123,6 +135,7 @@ public class UserController {
         }
     }
 
+//    登录即时判断用户名是否合法Ajax（bug不可用）
     @ResponseBody                 //给调用者返回原始数据
     @RequestMapping(value = "/userExistAjax",produces = {"text/html;charset=UTF-8"})
     public String userExistAjax(String username) throws UnsupportedEncodingException {
@@ -134,6 +147,7 @@ public class UserController {
             return "用户名可用";
     }
 
+//    登录即时判断用户名和密码是否合法Ajax（bug不可用）
     @ResponseBody                 //给调用者返回原始数据
     @RequestMapping(value = "/userLegallyAjax",produces = {"text/html;charset=UTF-8"})
     public String userLegallyAjax(String username,String password) throws UnsupportedEncodingException {

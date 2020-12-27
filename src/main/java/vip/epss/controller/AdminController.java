@@ -21,6 +21,7 @@ public class AdminController {
     @Autowired
     private GoodsService goodsService;
 
+//    管理员界面跳转用户列表页
     @RequestMapping(value = "/userList")
     public ModelAndView userList(){
         ModelAndView modelAndView = new ModelAndView("admin/userList");
@@ -28,6 +29,8 @@ public class AdminController {
         modelAndView.addObject("users",users);
         return modelAndView;
     }
+
+//    管理员界面跳转商品列表页
     @RequestMapping(value = "/goodsList")
     public ModelAndView goodsList(){
         ModelAndView modelAndView = new ModelAndView("admin/goodsList");
@@ -35,6 +38,8 @@ public class AdminController {
         modelAndView.addObject("goods",goods);
         return modelAndView;
     }
+
+//    管理员界面商品列表页增加商品个数按钮
     @RequestMapping(value = "/addnum")
     public ModelAndView addnum(@RequestParam Integer itemid,@RequestParam Integer num){
         Goods getgood = goodsService.selectByItemid(itemid);
@@ -42,6 +47,8 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView("redirect:goodsList");
         return modelAndView;
     }
+
+//    管理员界面商品列表页减少商品个数按钮
     @RequestMapping(value = "/minusnum")
     public ModelAndView minusnum(@RequestParam Integer itemid,@RequestParam Integer num){
         Goods getgood = goodsService.selectByItemid(itemid);
@@ -49,12 +56,16 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView("redirect:goodsList");
         return modelAndView;
     }
+
+//    管理员用户列表界面删除用户按钮
     @RequestMapping(value = "/delete")
     public ModelAndView delete(@RequestParam Integer uid){
         userService.delete(uid);
         ModelAndView modelAndView = new ModelAndView("redirect:userList");
         return modelAndView;
     }
+
+//    管理员商品列表界面删除商品按钮
     @RequestMapping(value = "/deleteItem")
     public ModelAndView deleteItem(@RequestParam Integer itemid){
         goodsService.delete(itemid);

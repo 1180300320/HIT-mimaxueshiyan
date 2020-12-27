@@ -44,7 +44,7 @@
             <td>${goods.itemprice}</td>
             <td>${goods.owner}</td>
             <td>${goods.number}</td>
-            <td><a class="btn btn-danger btn-sm" href="${appContext}/goods/addToGouwuche?itemid=${goods.itemid}">添加</a></td>
+            <td><a class="btn btn-danger btn-sm" href="${appContext}/goods/addToGouwuche?itemid=${goods.itemid}&uid=${sessionScope.USER_SESSION.uid}">添加</a></td>
             <td>${goods.number}</td>
         </tr>
     </c:forEach>

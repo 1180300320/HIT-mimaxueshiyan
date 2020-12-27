@@ -40,7 +40,7 @@
             <td>${goods.owner}</td>
             <td>${goods.number}</td>
             <td><a class="btn btn-danger btn-sm" href="${appContext}/goods/xiugaishangpin?itemid=${goods.itemid}">修改</a></td>
-            <td ><a class="btn btn-danger btn-sm" href="${appContext}/admin/deleteItem?itemid=${goods.itemid}">删除</a></td>
+            <td ><a class="btn btn-danger btn-sm" href="${appContext}/goods/deleteItem?itemid=${goods.itemid}">删除</a></td>
         </tr>
     </c:forEach>
 

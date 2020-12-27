@@ -20,5 +20,5 @@ public interface GoodsService {
     //查询一条记录,根据主键查询
     public Goods selectByItemid(Integer itemid);
     //查询一条记录,根据所属商家查询
-    public Goods selectByOwnername(String owner);
+    public List<Goods> selectByOwnername(String owner);
 }

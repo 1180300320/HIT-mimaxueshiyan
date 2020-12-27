@@ -41,12 +41,19 @@ public class GouwucheServiceImpl  implements GouwucheService {
             getItem.setItemnum(getnum - num);
             return gouwucheMapper.update(getItem);
         }
-
         else
         {
             delete(gouwuche.getGouwucheid());
             return -1;
         }
+    }
+
+    @Override
+    public Integer addgoods(Gouwuche gouwuche, Integer num) {
+//        Gouwuche getItem = gouwucheMapper.selectByGouwucheid(gouwuche.getGouwucheid());
+        Integer getnum = Math.toIntExact(gouwuche.getItemnum());
+        gouwuche.setItemnum(getnum + num);
+        return gouwucheMapper.update(gouwuche);
     }
 
     @Override
@@ -59,7 +66,19 @@ public class GouwucheServiceImpl  implements GouwucheService {
 
     @Override
     public List<Gouwuche> selectByUid(Integer uid) {
+//        System.out.println(gouwucheMapper.selectByUid(uid));
         return gouwucheMapper.selectByUid(uid);
+    }
+
+    @Override
+    public List<Gouwuche> selectByItemid(Integer itemid) {
+        return gouwucheMapper.selectByItemid(itemid);
+    }
+
+    @Override
+    public Gouwuche selectGouwuche(Integer itemid, Integer uid) {
+        System.out.println(gouwucheMapper.selectGouwuche(itemid,uid));
+        return gouwucheMapper.selectGouwuche(itemid,uid);
     }
 
 

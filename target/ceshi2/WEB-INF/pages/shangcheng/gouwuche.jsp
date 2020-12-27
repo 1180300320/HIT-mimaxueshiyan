@@ -20,27 +20,32 @@
         <a class="btn btn-block btn-primary" href="${appContext}/goods/jiesuan">结算</a>
     </div>
 </div>
+<div class="form-group">
+    <div class="col-sm-12">
+        <a class="btn btn-block btn-primary" href="${appContext}/goods/shangcheng">跳转回商城继续购买</a>
+    </div>
+</div>
 <table class="table table-bordered table-striped table-hover">
     <thead>
     <tr class="bg-info">
-        <th>序号#</th>
-        <th>商品名(itemname)</th>
-        <th>商品单价(itemprice)</th>
-        <th>所属商家(owner)</th>
-        <th>购买商品数(number)</th>
+        <th>序号</th>
+        <th>商品名</th>
+        <th>商品单价</th>
+        <th>所属商家</th>
+        <th>购买商品数</th>
         <th>操作(删除)</th>
     </tr>
     </thead>
     <tbody>
     <%--    循环遍历输出数据,使用jstl--%>
-    <c:forEach items="${goods}" var="goods" varStatus="status">
+    <c:forEach items="${gouwuchexianshi}" var="gouwuchexianshi" varStatus="status">
         <tr>
             <th>${status.count}</th>
-            <td>${goods.itemname}</td>
-            <td>${goods.itemprice}</td>
-            <td>${goods.owner}</td>
-            <td>${goods.owner}</td>
-            <td ><a class="btn btn-danger btn-sm" href="${appContext}/goods/minusnum?gouwucheid=${gouwuche.gouwucheid}&num=1">-</a></td>
+            <td>${gouwuchexianshi.itemname}</td>
+            <td>${gouwuchexianshi.itemprice}</td>
+            <td>${gouwuchexianshi.owner}</td>
+            <td>${gouwuchexianshi.number}</td>
+            <td ><a class="btn btn-danger btn-sm" href="${appContext}/goods/minusnum?uid=${sessionScope.USER_SESSION.uid}&gouwucheid=${gouwuchexianshi.gouwucheid}&num=1">-</a></td>
         </tr>
     </c:forEach>
 

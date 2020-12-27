@@ -33,8 +33,16 @@ public class GoodsServiceImpl  implements GoodsService {
     public Integer minus(Goods goods, Integer num) {
         Goods getItem = goodsMapper.selectByItemid(goods.getItemid());
         Integer getnum = Math.toIntExact(getItem.getNumber());
-        getItem.setNumber(getnum - num);
-        return goodsMapper.update(getItem);
+        if(getnum - num>=0)
+        {
+            getItem.setNumber(getnum - num);
+            return goodsMapper.update(getItem);
+        }
+        else
+        {
+            delete(goods.getItemid());
+            return -1;
+        }
     }
 
     @Override
@@ -56,7 +64,7 @@ public class GoodsServiceImpl  implements GoodsService {
     }
 
     @Override
-    public Goods selectByOwnername(String owner) {
+    public List<Goods> selectByOwnername(String owner) {
         return goodsMapper.selectByOwnername(owner);
     }
 }

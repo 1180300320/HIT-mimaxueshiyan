@@ -14,6 +14,12 @@
     <select id="selectByUid" resultType="Gouwuche">
         select * from gouwuche where uid=#{uid}
     </select>
+    <select id="selectByItemid" resultType="Gouwuche">
+        select * from gouwuche where itemid=#{itemid}
+    </select>
+    <select id="selectGouwuche" resultType="Gouwuche">
+        select * from gouwuche where itemid=#{itemid} and uid=#{uid}
+    </select>
     <!--    插入操作-->
     <insert id="insert" parameterType="Gouwuche">
         insert into gouwuche (uid, itemid, itemnum) values (#{uid},#{itemid},#{itemnum})
