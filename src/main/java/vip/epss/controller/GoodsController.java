@@ -145,12 +145,24 @@ public class GoodsController {
         return modelAndView;
     }
 
-//    购物车结算按钮
+//    购物车结算按钮,跳转到结算界面
     @RequestMapping(value = "/jiesuan")
-    public ModelAndView jiesuan(@RequestParam Integer gouwucheid,@RequestParam Integer num){
-        Gouwuche getgouwuche = gouwucheService.selectByGouwucheid(gouwucheid);
-        gouwucheService.minus(getgouwuche,num);
-        ModelAndView modelAndView = new ModelAndView("redirect:goods/gouwuche");
+    public ModelAndView jiesuan(@RequestParam Integer uid){
+//        List<Gouwuche> gouwuches = gouwucheService.selectByUid(uid);
+        ModelAndView modelAndView = new ModelAndView("shangcheng/jiesuanjiemian");
+//        modelAndView.addObject("gouwuchexianshi",gouwuches);
+        List<Gouwuche> gouwuche = gouwucheService.selectByUid(uid);
+        List<Goods> goods = new ArrayList<>();
+        List<Gouwuchexianshi> gouwuchexianshi = new ArrayList<>();
+        Goods tempgood = new Goods();
+        for(Gouwuche a : gouwuche)
+        {
+//            goods.add(goodsService.selectByItemid(a.getItemid()));
+            tempgood = goodsService.selectByItemid(a.getItemid());
+            gouwuchexianshi.add(new Gouwuchexianshi(null,a.getGouwucheid(),a.getItemid(),a.getUid(),tempgood.getItemname(),tempgood.getItemprice(),tempgood.getOwner(), a.getItemnum()));
+        }
+
+        modelAndView.addObject("gouwuchexianshi",gouwuchexianshi);
         return modelAndView;
     }
 }

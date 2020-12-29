@@ -17,7 +17,8 @@
 <body>
 <div class="form-group">
     <div class="col-sm-12">
-        <a class="btn btn-block btn-primary" href="${appContext}/goods/jiesuan">结算</a>
+<%--        <a class="btn btn-block btn-primary" href="${appContext}/goods/jiesuan?gouwuchexianshi=${gouwuchexianshi}">结算</a>--%>
+    <a class="btn btn-block btn-primary" href="${appContext}/goods/jiesuan?uid=${sessionScope.USER_SESSION.uid}">结算</a>
     </div>
 </div>
 <div class="form-group">
